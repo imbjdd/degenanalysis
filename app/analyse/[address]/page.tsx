@@ -54,7 +54,7 @@ export default async function Analyse({params}: any) {
             </div>
           </div>
           <div className="max-w-5xl w-full flex flex-col justify-center">
-            <p className="text-sky-900 text-3xl font-semibold">Analyse</p>
+            <p className="text-sky-900 text-3xl font-semibold">Analysis</p>
             <div className="flex flex-col gap-4 py-4">
               <FeatureCard success={result.code !== 'no_code'} content={'Is there code?'} />
               <FeatureCard success={result.isToken?true:false} content={'Is it a token?'} />
