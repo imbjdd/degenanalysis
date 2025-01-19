@@ -5,7 +5,13 @@ import FeatureCard from '@/components/FeatureCard'
 import { check } from '@/utils/contract/check';
 import { Check, X } from 'lucide-react';
 
-export default async function Analyse({params}) {
+interface Result {
+  code: string;
+  isToken?: boolean;
+  isCodeSourcePublished?: boolean;
+}
+
+export default async function Analyse({params}: any) {
   const supabase = await createClient();
   const { address } = await params
 
@@ -17,7 +23,7 @@ export default async function Analyse({params}) {
 
   console.log(list_of_audits)
 
-  const result = await check(address)
+  const result: Result = await check(address)
   console.log(result)
 
   return (
@@ -42,7 +48,7 @@ export default async function Analyse({params}) {
           <div className="max-w-5xl w-full flex flex-col justify-center">
             <p className="text-sky-900 text-3xl font-semibold">Audits</p>
             <div className="flex flex-col gap-4 py-4">
-              {list_of_audits.map((audit, i) => (
+              {(list_of_audits||[]).map((audit, i) => (
                 <AuditCard audit={audit} n={i} key={'audit'+i}/>
               ))}
             </div>
@@ -51,8 +57,8 @@ export default async function Analyse({params}) {
             <p className="text-sky-900 text-3xl font-semibold">Analyse</p>
             <div className="flex flex-col gap-4 py-4">
               <FeatureCard success={result.code !== 'no_code'} content={'Is there code?'} />
-              <FeatureCard success={result.isToken} content={'Is it a token?'} />
-              <FeatureCard success={result.isCodeSourcePublished} content={'Is code source published?'} />
+              <FeatureCard success={result.isToken?true:false} content={'Is it a token?'} />
+              <FeatureCard success={result.isCodeSourcePublished?true:false} content={'Is code source published?'} />
             </div>
           </div>
         </div>

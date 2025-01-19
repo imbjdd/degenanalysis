@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const AuditCard = ({ audit, n }) => {
+const AuditCard = ({ audit, n }: any) => {
   const [isHovering, setIsHovering] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -15,7 +15,7 @@ const AuditCard = ({ audit, n }) => {
       setIsHovering(false);
     };
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: any) => {
       setPosition({
         x: e.clientX - 15,
         y: e.clientY - 15
@@ -23,14 +23,19 @@ const AuditCard = ({ audit, n }) => {
     };
 
     const container = document.querySelector('.container'+n);
-    container.addEventListener('mouseenter', handleMouseEnter);
-    container.addEventListener('mouseleave', handleMouseLeave);
-    container.addEventListener('mousemove', handleMouseMove);
+    if(container) {
+      container.addEventListener('mouseenter', handleMouseEnter);
+      container.addEventListener('mouseleave', handleMouseLeave);
+      container.addEventListener('mousemove', handleMouseMove);
+    }
+
 
     return () => {
-      container.removeEventListener('mouseenter', handleMouseEnter);
-      container.removeEventListener('mouseleave', handleMouseLeave);
-      container.removeEventListener('mousemove', handleMouseMove);
+      if(container) {
+        container.removeEventListener('mouseenter', handleMouseEnter);
+        container.removeEventListener('mouseleave', handleMouseLeave);
+        container.removeEventListener('mousemove', handleMouseMove);
+      }
     };
   }, []);
 

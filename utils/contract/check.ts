@@ -1,6 +1,12 @@
 import { ethers } from "ethers";
 
-async function isERC20(contractAddress, provider) {
+interface Result {
+  code: string;
+  isToken?: boolean;
+  isCodeSourcePublished?: boolean;
+}
+
+async function isERC20(contractAddress:string, provider:any) {
   const abiFragment = [
     "function totalSupply() view returns (uint256)",
     "function balanceOf(address) view returns (uint256)",
@@ -18,10 +24,12 @@ async function isERC20(contractAddress, provider) {
   }
 }
 
-export async function check(contractAddress) {
+export async function check(contractAddress:string) {
   const provider = new ethers.JsonRpcProvider(process.env.INFURA_KEY);
 
-  const result = {}
+  const result: Result = {
+    code: ''
+  }
 
   const code = await provider.getCode(contractAddress);
   if (code === "0x") {

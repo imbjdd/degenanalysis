@@ -1,6 +1,6 @@
 import { Check, X } from 'lucide-react';
 
-export default function FeatureCard({success, content}) {
+export default function FeatureCard({success, content}: {success:boolean, content: string}) {
   return (
     <div className={"flex gap-4 items-center rounded-2xl border p-8 " + (success?'bg-green-200':'bg-red-200')}>
       {success && (
