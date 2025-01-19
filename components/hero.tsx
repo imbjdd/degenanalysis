@@ -1,44 +1,30 @@
-import NextLogo from "./next-logo";
-import SupabaseLogo from "./supabase-logo";
+import { Input } from "@/components/ui/input"
 
 export default function Header() {
   return (
-    <div className="flex flex-col gap-16 items-center">
-      <div className="flex gap-8 justify-center items-center">
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <SupabaseLogo />
-        </a>
-        <span className="border-l rotate-45 h-6" />
-        <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
-          <NextLogo />
-        </a>
+    <div className="relative flex flex-col items-center mb-12">
+      <div className="flex flex-col gap-16 bg-pink-300 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#FCE7F3_1px,_transparent_1px),_linear-gradient(to_bottom,_#FCE7F3_1px,_transparent_1px)]">
+        <div className="max-w-5xl w-full flex flex-col justify-center gap-8 pt-16 pb-16">
+          <p className="text-5xl font-bold text-sky-900">
+            Is it safe? Find Out Now
+          </p>
+          <p className="text-xl font-semibold text-sky-900">
+            Free, Open Source, and <span className="bg-yellow-400">Degen-Approved</span> Analysis
+          </p>
+          <div className="flex bg-sky-900 rounded-2xl">
+            <Input className="py-8 overflow-hidden bg-sky-900 border-none rounded-2xl text-white/80 placeholder:text-white/80" type="text" placeholder="Search by Address / Token name" />
+            <a href="/analyse/0x1234567890abcdef1234567890abcdef12345678" className="rounded-full text-white flex items-center justify-center px-6" >meow</a>
+          </div>
+        </div>
       </div>
-      <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
-      <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
-        The fastest way to build apps with{" "}
-        <a
-          href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-          target="_blank"
-          className="font-bold hover:underline"
-          rel="noreferrer"
-        >
-          Supabase
-        </a>{" "}
-        and{" "}
-        <a
-          href="https://nextjs.org/"
-          target="_blank"
-          className="font-bold hover:underline"
-          rel="noreferrer"
-        >
-          Next.js
-        </a>
-      </p>
-      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
+      <div className="absolute bg-white w-full py-8 border max-w-5xl rounded-2xl translate-y-1/2 bottom-0 flex items-center px-8">
+        <div className="flex-grow">
+          <p className="text-sky-900 text-xl font-semibold">547 Audit Saved</p>
+        </div>
+        <div className="flex-grow">
+          <p className="text-sky-900 text-xl font-semibold">+1,002,123 Contracts Searched</p>
+        </div>
+      </div>
     </div>
   );
 }

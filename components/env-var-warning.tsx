@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export function EnvVarWarning() {
   return (
     <div className="flex gap-4 items-center">
+      <ThemeSwitcher />
       <Badge variant={"outline"} className="font-normal">
-        Supabase environment variables required
+        Sigma Version
       </Badge>
       <div className="flex gap-2">
         <Button
