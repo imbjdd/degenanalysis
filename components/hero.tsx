@@ -1,6 +1,21 @@
 import { Input } from "@/components/ui/input"
+import { createClient } from "@/utils/supabase/server";
 
-export default function Header() {
+export default async function Header() {
+  const supabase = await createClient();
+
+  const { count } = await supabase
+    .from('smart_contract_audits')
+    .select('*', { count: 'exact', head: true })
+
+  const { data, error } = await supabase
+    .from('page_views')
+    .select('views')
+    .eq('page', '/analyse')
+    .single()
+
+  const number_of_audits = count || 0
+
   return (
     <div className="relative flex flex-col items-center mb-12">
       <div className="flex flex-col gap-16 bg-pink-300 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#FCE7F3_1px,_transparent_1px),_linear-gradient(to_bottom,_#FCE7F3_1px,_transparent_1px)]">
@@ -19,10 +34,10 @@ export default function Header() {
       </div>
       <div className="absolute bg-white w-full py-8 border max-w-5xl rounded-2xl translate-y-1/2 bottom-0 flex items-center px-8">
         <div className="flex-grow">
-          <p className="text-sky-900 text-xl font-semibold">547 Audit Saved</p>
+          <p className="text-sky-900 text-xl font-semibold">{number_of_audits} Audits Saved</p>
         </div>
         <div className="flex-grow">
-          <p className="text-sky-900 text-xl font-semibold">+1,002,123 Contracts Searched</p>
+          <p className="text-sky-900 text-xl font-semibold">+{data.views} Contracts Searched</p>
         </div>
       </div>
     </div>
