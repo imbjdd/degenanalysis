@@ -37,7 +37,7 @@ export default async function Header() {
           <p className="text-sky-900 text-xl font-semibold">{number_of_audits} Audits Saved</p>
         </div>
         <div className="flex-grow">
-          <p className="text-sky-900 text-xl font-semibold">+{data.views} Contracts Searched</p>
+          <p className="text-sky-900 text-xl font-semibold">+{data?.views||0} Contracts Searched</p>
         </div>
       </div>
     </div>
