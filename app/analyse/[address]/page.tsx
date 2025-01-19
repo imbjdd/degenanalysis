@@ -15,6 +15,8 @@ export default async function Analyse({params}: any) {
   const supabase = await createClient();
   const { address } = await params
 
+  await supabase.rpc('increment_view', { input_page: '/analyse' });
+
   const { data, error } = await supabase
     .from('smart_contract_audits')
     .select()
