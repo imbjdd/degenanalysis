@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import Meme from "@/components/meme";
+import Degen from "@/components/degen";
 import TryToken from "@/components/trytoken";
 import ConnectSupabaseSteps from "@/components/tutorial/connect-supabase-steps";
 import SignUpUserSteps from "@/components/tutorial/sign-up-user-steps";
@@ -11,6 +12,7 @@ export default async function Home() {
       <Hero />
       <TryToken />
       <Meme />
+      <Degen />
     </div>
   );
 }

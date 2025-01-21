@@ -58,24 +58,28 @@ export async function check(contractAddress:string) {
     code: ''
   }
 
-  const code = await provider.getCode(contractAddress);
-  if (code === "0x") {
-    result.code = 'no_code'
+  try {
+    const code = await provider.getCode(contractAddress);
+    if (code === "0x") {
+      result.code = 'no_code'
+      return result
+    } else {
+      result.code = code
+    }
+
+    const isToken = await isERC20(contractAddress, provider)
+    if (isToken === false) {
+      result.isToken = false
+      return result
+    } else {
+      result.isToken = true
+    }
+
+    const foundRow = await checkTxhashInCsv(contractAddress);
+    result.isCodeSourcePublished = foundRow?true:false
+
     return result
-  } else {
-    result.code = code
-  }
-
-  const isToken = await isERC20(contractAddress, provider)
-  if (isToken === false) {
-    result.isToken = false
+  } catch(e) {
     return result
-  } else {
-    result.isToken = true
   }
-
-  const foundRow = await checkTxhashInCsv(contractAddress);
-  result.isCodeSourcePublished = foundRow?true:false
-
-  return result
 }

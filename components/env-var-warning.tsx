@@ -7,7 +7,7 @@ export function EnvVarWarning() {
   return (
     <div className="flex gap-4 items-center">
       <ThemeSwitcher />
-      <Badge variant={"outline"} className="font-normal">
+      {/*<Badge variant={"outline"} className="font-normal">
         Sigma Version
       </Badge>
       <div className="flex gap-2">
@@ -29,7 +29,7 @@ export function EnvVarWarning() {
         >
           <Link href="/sign-up">Sign up</Link>
         </Button>
-      </div>
+      </div>*/}
     </div>
   );
 }
