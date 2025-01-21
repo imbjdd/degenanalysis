@@ -1,9 +1,10 @@
 import DeployButton from "@/components/deploy-button";
-import { EnvVarWarning } from "@/components/env-var-warning";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import { Github } from 'lucide-react';
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -36,7 +37,10 @@ export default function RootLayout({
                   <div className="flex gap-5 items-center font-semibold">
                     <a href="/">Home</a>
                   </div>
-                  <EnvVarWarning />
+                  <div className="flex gap-4 items-center">
+                    <Link className="hover:text-pink-300" href="https://github.com/imbjdd/degenanalysis" target="_blank"><Github /></Link>
+                    <ThemeSwitcher />
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col gap-20 w-full">
