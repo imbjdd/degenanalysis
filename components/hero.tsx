@@ -18,9 +18,9 @@ export default async function Header() {
 
   return (
     <div className="relative flex flex-col items-center mb-12">
-      <div className="flex flex-col gap-16 bg-pink-300 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#FBCFE8_1px,_transparent_1px),_linear-gradient(to_bottom,_#FBCFE8_1px,_transparent_1px)]">
+      <div className="px-4 lg:px-0 flex flex-col gap-16 bg-pink-300 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#FBCFE8_1px,_transparent_1px),_linear-gradient(to_bottom,_#FBCFE8_1px,_transparent_1px)]">
         <div className="max-w-5xl w-full flex flex-col justify-center gap-8 py-40">
-          <p className="text-7xl font-black text-sky-900">
+          <p className="text-5xl lg:text-7xl font-black text-sky-900">
             Is it safe? Find Out Now
           </p>
           <p className="text-xl font-bold text-sky-900">

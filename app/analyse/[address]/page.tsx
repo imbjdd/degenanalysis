@@ -31,7 +31,7 @@ export default async function Analyse({params}: any) {
   return (
     <div className="mb-24">
       <div className="relative flex flex-col items-center mb-24">
-      <div className="flex flex-col gap-16 bg-pink-300 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#FBCFE8_1px,_transparent_1px),_linear-gradient(to_bottom,_#FBCFE8_1px,_transparent_1px)]">
+      <div className="flex px-4 pb-4 lg:pb-0 lg:px-0 flex-col gap-16 bg-pink-300 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#FBCFE8_1px,_transparent_1px),_linear-gradient(to_bottom,_#FBCFE8_1px,_transparent_1px)]">
           <div className="max-w-5xl w-full flex flex-col justify-center gap-8 py-16">
             <p className="text-5xl font-bold text-sky-900">
               Token Analysis
@@ -55,7 +55,7 @@ export default async function Analyse({params}: any) {
           <p className="text-sky-900 text-xl font-semibold">Seems pretty safe <span className="font-light">(This is information – not financial advice or recommendation)</span></p>
         </div>
       </div>
-      <div className="relative flex flex-col items-center">
+      <div className="relative flex flex-col items-center px-4 lg:px-0">
         <div className="flex flex-col w-full items-center">
           <div className="max-w-5xl w-full flex flex-col justify-center">
             <p className="text-sky-900 text-3xl font-semibold">Audits</p>
