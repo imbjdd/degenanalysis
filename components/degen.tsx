@@ -7,25 +7,25 @@ export default function Degen() {
 	    <div className="relative flex flex-col gap-4 justify-between max-w-5xl w-full my-24 py-24">
 	    	<p className="text-sky-900 text-6xl font-bold mb-4">Approved by Degens</p>
 	    	<div className="flex gap-8 flex-wrap">
-		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400" href="/analyse/0xdac17f958d2ee523a2206206994597c13d831ec7">
+		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400">
 		    		<img className="w-44 h-44" alt="tether" src="https://github.com/imbjdd.png" />
 			    </div>
-		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400" href="/analyse/0xdac17f958d2ee523a2206206994597c13d831ec7">
+		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400">
 		    		<img className="w-44 h-44" alt="tether" src="https://github.com/imbjdd.png" />
 			    </div>
-		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400" href="/analyse/0xdac17f958d2ee523a2206206994597c13d831ec7">
+		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400">
 		    		<img className="w-44 h-44" alt="tether" src="https://github.com/imbjdd.png" />
 			    </div>
-		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400" href="/analyse/0xdac17f958d2ee523a2206206994597c13d831ec7">
+		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400">
 		    		<img className="w-44 h-44" alt="tether" src="https://github.com/imbjdd.png" />
 			    </div>
-		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400" href="/analyse/0xdac17f958d2ee523a2206206994597c13d831ec7">
+		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400">
 		    		<img className="w-44 h-44" alt="tether" src="https://github.com/imbjdd.png" />
 			    </div>
-		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400" href="/analyse/0xdac17f958d2ee523a2206206994597c13d831ec7">
+		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400">
 		    		<img className="w-44 h-44" alt="tether" src="https://github.com/imbjdd.png" />
 			    </div>
-		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400" href="/analyse/0xdac17f958d2ee523a2206206994597c13d831ec7">
+		    	<div className="border grow w-fit overflow-hidden rounded-2xl hover:text-pink-400">
 		    		<img className="w-44 h-44" alt="tether" src="https://github.com/imbjdd.png" />
 			    </div>
 			    {Array.from({ length: 3 }, (_, i) => (
