@@ -55,13 +55,12 @@ export async function check(contractAddress:string) {
   const provider = new ethers.JsonRpcProvider(process.env.INFURA_KEY);
 
   const result: Result = {
-    code: ''
+    code: 'no_code'
   }
 
   try {
     const code = await provider.getCode(contractAddress);
     if (code === "0x") {
-      result.code = 'no_code'
       return result
     } else {
       result.code = code
