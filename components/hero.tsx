@@ -18,23 +18,23 @@ export default async function Header() {
 
   return (
     <div className="relative flex flex-col items-center mb-12">
-      <div className="px-4 lg:px-0 flex flex-col gap-16 bg-pink-300 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#FBCFE8_1px,_transparent_1px),_linear-gradient(to_bottom,_#FBCFE8_1px,_transparent_1px)]">
+      <div className="px-4 lg:px-0 flex flex-col gap-16 bg-pink-300 dark:bg-sky-900 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#FBCFE8_1px,_transparent_1px),_linear-gradient(to_bottom,_#FBCFE8_1px,_transparent_1px)] dark:bg-[linear-gradient(to_right,_#075985_1px,_transparent_1px),_linear-gradient(to_bottom,_#075985_1px,_transparent_1px)]">
         <div className="max-w-5xl w-full flex flex-col justify-center gap-8 py-40">
-          <p className="text-5xl lg:text-7xl font-black text-sky-900">
+          <p className="text-5xl lg:text-7xl font-black text-sky-900 dark:text-pink-300">
             Is it safe? Find Out Now
           </p>
-          <p className="text-xl font-bold text-sky-900">
-            Free, Open Source, and <span className="bg-yellow-400">Degen-Approved</span> Analysis
+          <p className="text-xl font-bold text-sky-900 dark:text-pink-300">
+            Free, Open Source, and <span className="bg-yellow-400 dark:bg-sky-950">Degen-Approved</span> Analysis
           </p>
           <SearchBar />
         </div>
       </div>
-      <div className="absolute bg-white w-full p-12 border max-w-5xl rounded-2xl translate-y-1/2 bottom-0 flex items-center">
+      <div className="absolute bg-white dark:bg-sky-800 w-full p-12 border max-w-5xl rounded-2xl translate-y-1/2 bottom-0 flex items-center">
         <div className="flex-grow">
-          <p className="text-sky-900 text-xl font-semibold">{number_of_audits} Audits Saved</p>
+          <p className="text-sky-900 dark:text-pink-300 text-xl font-semibold">{number_of_audits} Audits Saved</p>
         </div>
         <div className="flex-grow">
-          <p className="text-sky-900 text-xl font-semibold">+{data?.views||0} Contracts Searched</p>
+          <p className="text-sky-900 dark:text-pink-300 text-xl font-semibold">+{data?.views||0} Contracts Searched</p>
         </div>
       </div>
     </div>

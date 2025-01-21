@@ -30,7 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen bg-slate-50 flex flex-col items-center">
+          <main className="min-h-screen bg-slate-50 dark:bg-sky-950 flex flex-col items-center">
             <div className="flex-1 w-full flex flex-col gap-0 items-center">
               <div className="w-full px-4 lg:px-0 flex justify-center h-16">
                 <div className="w-full max-w-5xl flex justify-between items-center py-3 text-sm">
