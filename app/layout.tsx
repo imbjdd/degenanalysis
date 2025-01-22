@@ -1,3 +1,4 @@
+
 import DeployButton from "@/components/deploy-button";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { ThemeProvider } from "next-themes";
@@ -47,15 +48,15 @@ export default function RootLayout({
                 {children}
               </div>
 
-    <footer className="relative w-full flex flex-col items-center">
-      <div className="flex flex-col gap-16 bg-sky-900 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#075985_1px,_transparent_1px),_linear-gradient(to_bottom,_#075985_1px,_transparent_1px)]">
-        <div className="max-w-5xl w-full flex flex-col justify-center gap-8 py-20">
-          <p className="px-4 lg:px-0 text-4xl break-all lg:text-7xl font-black text-pink-300">
-            #DegenAnalysis
-          </p>
-        </div>
-      </div>
-    </footer>
+              <footer className="relative w-full flex flex-col items-center">
+                <div className="flex flex-col gap-16 bg-sky-900 w-full items-center bg-[length:64px_64px] bg-[linear-gradient(to_right,_#075985_1px,_transparent_1px),_linear-gradient(to_bottom,_#075985_1px,_transparent_1px)]">
+                  <div className="max-w-5xl w-full flex flex-col justify-center gap-8 py-20">
+                    <p className="px-4 lg:px-0 text-4xl break-all lg:text-7xl font-black text-pink-300">
+                      #DegenAnalysis
+                    </p>
+                  </div>
+                </div>
+              </footer>
             </div>
           </main>
         </ThemeProvider>

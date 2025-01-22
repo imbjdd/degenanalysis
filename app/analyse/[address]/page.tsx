@@ -1,6 +1,8 @@
 "use server"
+
 import { createClient } from "@/utils/supabase/server";
 import AuditCard from '@/components/AuditCard'
+import AddAudit from '@/components/addaudit'
 import FeatureCard from '@/components/FeatureCard'
 import { check } from '@/utils/contract/check';
 import { Check, X } from 'lucide-react';
@@ -23,10 +25,7 @@ export default async function Analyse({params}: any) {
     .eq('smart_contract_address', address)
   const list_of_audits = data
 
-  console.log(list_of_audits)
-
   const result: Result = await check(address)
-  console.log(result)
 
   return (
     <div className="mb-24">
@@ -45,14 +44,14 @@ export default async function Analyse({params}: any) {
                 </div>
               )}
               {result.code !== 'no_code' && (
-                <p className="text-lg font-semibold text-sky-900 dark:text-pink-300">
+                <p className="text-lg font-base text-black dark:text-pink-300">
                   {address}
                 </p>
               )}
           </div>
         </div>
         <div className="absolute bg-white dark:bg-sky-800 w-full py-8 border max-w-5xl rounded-2xl translate-y-1/2 bottom-0 flex items-center px-8">
-          <p className="text-sky-900 dark:text-pink-300 text-xl font-semibold">Seems pretty safe <span className="font-light">(This is information – not financial advice or recommendation)</span></p>
+          <p className="text-sky-900 dark:text-pink-300 text-xl font-semibold">Seems pretty safe <span className="font-light text-black">(This is information – not financial advice or recommendation)</span></p>
         </div>
       </div>
       <div className="relative flex flex-col items-center px-4 lg:px-0">
@@ -60,9 +59,10 @@ export default async function Analyse({params}: any) {
           <div className="max-w-5xl w-full flex flex-col justify-center">
             <p className="text-sky-900 dark:text-pink-300 text-3xl font-semibold">Audits</p>
             <div className="flex flex-col gap-4 py-4">
-              {!list_of_audits && (
-                <p className="text-lg font-semibold text-sky-900">
-                  It seems to not be a token.
+              <AddAudit />
+              {!list_of_audits?.length && (
+                <p className="text-lg font-base text-black">
+                  No audit found.
                 </p>
               )}
               {(list_of_audits||[]).map((audit, i) => (
