@@ -8,6 +8,11 @@ export default function SearchBar() {
   const router = useRouter()
   const [search, setSearch] = useState('')
 
+  function submitSearch() {
+     if(search && search.length)
+      router.push('/analyse/'+search)
+  }
+
   return (
     <div className="flex bg-sky-900 dark:bg-pink-300 rounded-2xl">
       <Input
@@ -15,9 +20,9 @@ export default function SearchBar() {
         type="text" placeholder="Search by Address / Token name"
         value={search}
         onChange={event => setSearch(event.target.value)}
-        onKeyDown={(e) => e.key === 'Enter' && router.push('/analyse/'+search)}
+        onKeyDown={(e) => e.key === 'Enter' && submitSearch()}
       />
-      <button onClick={() => router.push('/analyse/'+search)} className="rounded-full text-white dark:text-black flex items-center justify-center px-6" >meow</button>
+      <button onClick={() => submitSearch()} className="rounded-full text-white dark:text-black flex items-center justify-center px-6" >meow</button>
     </div>
   );
 }
