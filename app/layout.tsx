@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import Navbar from "@/components/Navbar";
 import { Github } from 'lucide-react';
 
 const defaultUrl = process.env.VERCEL_URL
@@ -16,12 +17,14 @@ export const metadata = {
   title: "Degen Analysis",
   description: "The fastest way to build apps with Next.js and Supabase",
 };
+import { headers } from "next/headers";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-background text-foreground" suppressHydrationWarning>
@@ -31,13 +34,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen bg-slate-50 dark:bg-sky-950 flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-0 items-center">
+          <main className="min-h-screen bg-slate-50 z-20 dark:bg-sky-950 flex flex-col items-center">
+            <div className="flex-1 w-full z-50 flex flex-col gap-0 items-center">
               <div className="w-full px-4 lg:px-0 flex justify-center h-16">
                 <div className="w-full max-w-5xl flex justify-between items-center py-3 text-sm">
-                  <div className="flex gap-5 items-center font-semibold">
-                    <a href="/">Home</a>
-                  </div>
+                  <Navbar />
                   <div className="flex gap-4 items-center">
                     <Link className="hover:text-pink-300" href="https://github.com/imbjdd/degenanalysis" target="_blank"><Github /></Link>
                     <ThemeSwitcher />
