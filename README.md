@@ -1,17 +1,21 @@
-
-[![All Contributors](https://img.shields.io/github/all-contributors/ethereum/ethereum-org-website?color=orange&style=flat-square)](#contributors-)
-
-<div align="center" style="margin-top: 1em; margin-bottom: 3em;">
-  <a href="https://ethereum.org"><img alt="ethereum logo" src="./public/Degen Analysis.png" alt="ethereum.org" height="240"></a>
+<div align="center" style="margin-top: 1em; margin-bottom: 1em;">
   <h1>👋 Welcome Degens to Degen Analysis</h1>
+
+![GitHub contributors](https://img.shields.io/github/contributors/imbjdd/degenanalysis?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/badge/you_are_(not)-alone-blue?style=for-the-badge)
+
+
 </div>
 
 >[!WARNING]
 > The project is under development and is not yet finished. Some features may be missing or unstable.
 
-This is the repo for the [degenanalysis](https://degenanalysis.vercel.app/) website. The goal of the [website](https://degenanalysis.vercel.app/) is to **analyze smart contracts** and search for **existing audits**. Check an example [here](https://degenanalysis.vercel.app/opendata).
+This is the repo for the [Degen Analysis](https://degenanalysis.vercel.app/) website. The goal of the [website](https://degenanalysis.vercel.app/) is to **analyze smart contracts** and search for **existing audits**. Check an example [here](https://degenanalysis.vercel.app/opendata).
 
-Core values of the projects include Open Data. Learn more on [degenanalysis](https://degenanalysis.vercel.app/opendata).
+Core values of the projects include Open Data. Learn more on [Degen Analysis](https://degenanalysis.vercel.app/opendata).
+
+<a href="https://degenanalysis.vercel.app/"><img alt="degen analysis screenshot" src="./public/screenshot.png" alt="https://degenanalysis.vercel.app/"></a>
+
 
 <hr style="margin-top: 3em; margin-bottom: 3em;">
 
