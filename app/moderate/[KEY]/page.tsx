@@ -5,7 +5,7 @@ import AuditCard from '@/components/AuditCardAdmin'
 
 export default async function Moderate({params}: any) {
   try {
-  const {KEY} = params
+  const {KEY} = await params
 
   if(KEY!=process.env.SECRET_KEY) return (<p>This page is for admins :D</p>)
 
